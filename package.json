@@ -1,6 +1,6 @@
 {
   "name": "@raphtlw/hyperfunc",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Streamlined Function Calling for LLMs",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -25,6 +25,10 @@
   ],
   "author": "raphtlw <raphpb1912@gmail.com>",
   "license": "WTFPL",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/raphtlw/hyperfunc.git"
+  },
   "devDependencies": {
     "@tsconfig/node21": "^21.0.3",
     "@types/node": "^20.12.7",
