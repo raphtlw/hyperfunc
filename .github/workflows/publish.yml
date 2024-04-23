@@ -8,11 +8,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 8
+          run_install: false
+
       - uses: actions/setup-node@v4
         with:
           node-version: 21
-          registry-url: 'https://registry.npmjs.org'
-      - run: npm ci
-      - run: npm publish --access=public
+          cache: pnpm
+          registry-url: https://registry.npmjs.org
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Publish 🚀
+        shell: bash
+        run: pnpm publish --access public --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
