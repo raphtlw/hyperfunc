@@ -1,0 +1,38 @@
+{
+  "name": "@raphtlw/hyperfunc",
+  "version": "0.0.1",
+  "description": "Streamlined Function Calling for LLMs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "type": "module",
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md",
+    "package.json"
+  ],
+  "keywords": [
+    "function",
+    "calling",
+    "hyper",
+    "tools",
+    "llm",
+    "ai"
+  ],
+  "author": "raphtlw <raphpb1912@gmail.com>",
+  "license": "WTFPL",
+  "devDependencies": {
+    "@tsconfig/node21": "^21.0.3",
+    "@types/node": "^20.12.7",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@raphtlw/indoc": "^0.1.6",
+    "openai": "^4.38.3",
+    "zod": "^3.23.3",
+    "zod-to-json-schema": "^3.23.0"
+  }
+}
