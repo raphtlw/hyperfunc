@@ -11,10 +11,26 @@
 To use the HyperFunction library in your project, you can install it via pnpm:
 
 ```shell
-pnpm install @raphtlw/hyperfunction
+pnpm add @raphtlw/hyperfunction
+```
+
+Don't forget to install [zod](https://zod.dev/) for schema declarations.
+
+```shell
+pnpm add zod
 ```
 
 ### Usage
+
+#### `z` stands for zod
+
+Import Zod at the top of every file for function calling parameter declarations.
+
+```typescript
+import { z } from "zod"
+```
+
+Zod tells the LLM what the type of your function arguments have to be.
 
 #### Defining a LLM function
 
@@ -128,6 +144,19 @@ const completion = await openai.chat.completions.create({
   tool_choice: "auto",
   tools: functions.asTools(),
 });
+```
+
+#### Running HyperFunctions
+
+You can run functions after getting LLM outputs as such:
+
+```typescript
+if (chosen.message.tool_calls) {
+  for (const toolCall of chosen.message.tool_calls) {
+    const response = await functions.callTool(toolCall, context);
+    console.log(response) // output of function call (type: unknown)
+  }
+}
 ```
 
 ### Contributing
