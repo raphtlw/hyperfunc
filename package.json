@@ -1,12 +1,11 @@
 {
   "name": "@raphtlw/hyperfunc",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Streamlined Function Calling for LLMs",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
-    "publish": "pnpm publish --access=public"
+    "build": "tsc"
   },
   "type": "module",
   "files": [
