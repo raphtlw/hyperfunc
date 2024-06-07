@@ -11,7 +11,7 @@
 To use the HyperFunction library in your project, you can install it via pnpm:
 
 ```shell
-pnpm add @raphtlw/hyperfunction
+pnpm add @raphtlw/hyperfunc
 ```
 
 Don't forget to install [zod](https://zod.dev/) for schema declarations.
